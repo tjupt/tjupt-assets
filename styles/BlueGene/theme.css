@@ -2,7 +2,7 @@ body
 {
 	margin-top: 0px;
 	margin-bottom: 0px;
-	background: url(./bg.jpg) no-repeat center top;
+	background: url(//tjupt.org//tjupt-assets/styles/BlueGene/bg.jpg) no-repeat center top;
 	background-color: #39bac8;
 	color: #000000;
 	font-family: tahoma, arial, helvetica, sans-serif;
@@ -487,7 +487,7 @@ ul.menu li
 ul.menu li a
 {
 	color:#00000;
-	background:url(../img/menu1-1.gif) no-repeat left top;
+	background:url(//tjupt.org//tjupt-assets/styles/img/menu1-1.gif) no-repeat left top;
 	margin-right: 1px;
 	padding: 3px 7px;
 	text-decoration: none;
@@ -508,7 +508,7 @@ ul.menu li a:visited
 }
 ul.menu li a:hover
 {
-	background:url(../img/menu1-2.gif) no-repeat left top;
+	background:url(//tjupt.org//tjupt-assets/styles/img/menu1-2.gif) no-repeat left top;
 }
 ul.menu li a:active
 {
@@ -516,7 +516,7 @@ ul.menu li a:active
 }
 ul.menu li.selected a
 {
-	background:url(../img/menu1-2.gif) no-repeat left top;
+	background:url(//tjupt.org//tjupt-assets/styles/img/menu1-2.gif) no-repeat left top;
 	color: #ffffff;
 }
 ul.menu li.selected a:hover
@@ -650,7 +650,7 @@ A.Peasant_Name:visited{color: #708090}
 /*scrollbar*/
 #scrollbar{position:fixed;top:50%;right:50%;width:32px;margin-right:-516px;/*border:1px solid #444;background:transparent;*/-webkit-box-shadow:0 0 5px #FFF;-khtml-box-shadow:0 0 5px #FFF;box-shadow:0 0 5px #FFF;border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px;-khtml-border-radius:5px;}
 /*
-#scrollbar a{display:block;width:24px; height:24px;background:url(scrollbar.gif) no-repeat 0 0;cursor:pointer;}
+#scrollbar a{display:block;width:24px; height:24px;background:url(//tjupt.org//tjupt-assets/styles/BlueGene/scrollbar.gif) no-repeat 0 0;cursor:pointer;}
 #scrollbar a.top:hover {background-position:-24px 0;}
 #scrollbar a.bottom {background-position:0 -24px;}
 #scrollbar a.bottom:hover {background-position:-24px -24px;}
@@ -658,14 +658,14 @@ A.Peasant_Name:visited{color: #708090}
 #scrollbar a.comments:hover {background-position:-24px -48px;}
 */
 /*
-#scrollbar a{display:block;width:32px; height:26px;background:url(scrollbar2.png) no-repeat 0 0;cursor:pointer;}
+#scrollbar a{display:block;width:32px; height:26px;background:url(//tjupt.org//tjupt-assets/styles/BlueGene/scrollbar2.png) no-repeat 0 0;cursor:pointer;}
 #scrollbar a.top:hover {background-position:-32px 0;}
 #scrollbar a.bottom {background-position:0 -46px;}
 #scrollbar a.bottom:hover {background-position:-32px -46px;}
 #scrollbar a.comments {background-position:0 -23px;}
 #scrollbar a.comments:hover {background-position:-32px -23px;}
 */
-#scrollbar a{display:block;width:32px; height:64px;background:url(/styles/scrollbar3.gif) no-repeat 0 0;cursor:pointer;}
+#scrollbar a{display:block;width:32px; height:64px;background:url(//tjupt.org/styles/scrollbar3.gif) no-repeat 0 0;cursor:pointer;}
 #scrollbar a.top:hover {background-position:-32px 0;}
 #scrollbar a.bottom {background-position:0 -64px;}
 #scrollbar a.bottom:hover {background-position:-32px -64px;}

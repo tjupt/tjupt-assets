@@ -56,8 +56,8 @@ table {
   margin: 0 0 -48px;
   background-repeat: no-repeat;
   background-position: 16px 8px;
-  background-image: url(/styles/SimpleGray/logo.png);
-  *background-image: url(/styles/SimpleGray/logo_oldie.png);
+  background-image: url(//tjupt.org/styles/SimpleGray/logo.png);
+  *background-image: url(//tjupt.org/styles/SimpleGray/logo_oldie.png);
 }
 #header td, #header tr {
   height: 48px;
@@ -432,7 +432,7 @@ h2 a:link, h2 h2 a:hover, h2 a:focus, h2 a:visited,
   border-radius: 4px;
   opacity: 0.6;
   transition: all 0.25s 0.25s;
-  background-image: url(/styles/SimpleGray/arrow.png);
+  background-image: url(//tjupt.org/styles/SimpleGray/arrow.png);
   left: 0;
   *left: expression(document.documentElement.clientWidth <= 1024 ? -16 : 0);
   _left: expression(document.documentElement.clientWidth <= 1024 ? -12 : 4);

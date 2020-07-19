@@ -1,7 +1,7 @@
 body
 {
 	margin-top: 0px;
-	background: #e6e6e6 url(./bg.gif) repeat left top;
+	background: #e6e6e6 url(//tjupt.org//tjupt-assets/styles/BlasphemyOrange/bg.gif) repeat left top;
 	margin-bottom: 0px;
 	color: #000000;
 	font-family: tahoma, arial, helvetica, sans-serif;
@@ -96,7 +96,7 @@ h2
 	padding-right: 4px;
 	background-position: left top;
 	padding-left: 4px;
-	background-image: url(./shade.gif);
+	background-image: url(//tjupt.org//tjupt-assets/styles/BlasphemyOrange/shade.gif);
 	margin-bottom: 0px;
 	padding-bottom: 3px;
 	padding-top: 3px;
@@ -199,7 +199,7 @@ td.colhead
 {
 	white-space:nowrap;
 	font-weight: bold;
-	background: url(./shade.gif) white repeat-x left top;
+	background: url(//tjupt.org//tjupt-assets/styles/BlasphemyOrange/shade.gif) white repeat-x left top;
 	background-color: #ff9718;
 	color: #ffffff;
 }
@@ -421,7 +421,7 @@ a.altlink_green:hover
 	border-top: #ccc 1px outset;
 	padding-left: 2px;
 	font-weight: bold;
-	background: url(./btnbg.gif) repeat-x left top;
+	background: url(//tjupt.org//tjupt-assets/styles/BlasphemyOrange/btnbg.gif) repeat-x left top;
 	padding-bottom: 1px;
 	border-left: #ccc 1px outset;
 	cursor: pointer;
@@ -436,7 +436,7 @@ a.altlink_green:hover
 	border-top: #ccc 1px outset;
 	padding-left: 2px;
 	font-weight: bold;
-	background: url(./btnbg.gif) repeat-x left top;
+	background: url(//tjupt.org//tjupt-assets/styles/BlasphemyOrange/btnbg.gif) repeat-x left top;
 	padding-bottom: 1px;
 	border-left: #ccc 1px outset;
 	cursor: pointer;
@@ -482,7 +482,7 @@ img.border
 	padding-right: 3px;
 	padding-left: 3px;
 	font-weight: bold;
-	background: url(./code.gif) #f1b000 no-repeat right 50%;
+	background: url(//tjupt.org//tjupt-assets/styles/BlasphemyOrange/code.gif) #f1b000 no-repeat right 50%;
 	padding-bottom: 3px;
 	margin: 0px auto;
 	color: #000;
@@ -539,7 +539,7 @@ ul.menu li
 ul.menu li a
 {
 	color: #2d2b2b;
-	background: url(./shade.gif) repeat-x left top;
+	background: url(//tjupt.org//tjupt-assets/styles/BlasphemyOrange/shade.gif) repeat-x left top;
 	border: 1px solid white;
 	background-color: #ff9718;
 	margin-right: 1px;
@@ -571,7 +571,7 @@ ul.menu li a:active
 }
 ul.menu li.selected a
 {
-	background-image: url(./shadeactive.gif);
+	background-image: url(//tjupt.org//tjupt-assets/styles/BlasphemyOrange/shadeactive.gif);
 	background-color: #8a8a8a;
 }
 ul.menu li.selected a:hover
@@ -700,7 +700,7 @@ A.Peasant_Name:visited{color: #708090}
 /*scrollbar*/
 #scrollbar{position:fixed;top:50%;right:50%;width:32px;margin-right:-516px;/*border:1px solid #444;background:transparent;*/-webkit-box-shadow:0 0 5px #FFF;-khtml-box-shadow:0 0 5px #FFF;box-shadow:0 0 5px #FFF;border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px;-khtml-border-radius:5px;}
 /*
-#scrollbar a{display:block;width:24px; height:24px;background:url(scrollbar.gif) no-repeat 0 0;cursor:pointer;}
+#scrollbar a{display:block;width:24px; height:24px;background:url(//tjupt.org//tjupt-assets/styles/BlasphemyOrange/scrollbar.gif) no-repeat 0 0;cursor:pointer;}
 #scrollbar a.top:hover {background-position:-24px 0;}
 #scrollbar a.bottom {background-position:0 -24px;}
 #scrollbar a.bottom:hover {background-position:-24px -24px;}
@@ -708,14 +708,14 @@ A.Peasant_Name:visited{color: #708090}
 #scrollbar a.comments:hover {background-position:-24px -48px;}
 */
 /*
-#scrollbar a{display:block;width:32px; height:26px;background:url(scrollbar2.png) no-repeat 0 0;cursor:pointer;}
+#scrollbar a{display:block;width:32px; height:26px;background:url(//tjupt.org//tjupt-assets/styles/BlasphemyOrange/scrollbar2.png) no-repeat 0 0;cursor:pointer;}
 #scrollbar a.top:hover {background-position:-32px 0;}
 #scrollbar a.bottom {background-position:0 -46px;}
 #scrollbar a.bottom:hover {background-position:-32px -46px;}
 #scrollbar a.comments {background-position:0 -23px;}
 #scrollbar a.comments:hover {background-position:-32px -23px;}
 */
-#scrollbar a{display:block;width:32px; height:64px;background:url(/styles/scrollbar3.gif) no-repeat 0 0;cursor:pointer;}
+#scrollbar a{display:block;width:32px; height:64px;background:url(//tjupt.org/styles/scrollbar3.gif) no-repeat 0 0;cursor:pointer;}
 #scrollbar a.top:hover {background-position:-32px 0;}
 #scrollbar a.bottom {background-position:0 -64px;}
 #scrollbar a.bottom:hover {background-position:-32px -64px;}
