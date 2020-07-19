@@ -2,7 +2,7 @@ body
 {
 	margin-top: 0px;
 	margin-bottom: 0px;
-	background:url(//tjupt.org//tjupt-assets/styles/PurplePhantom/bg.png) no-repeat center top;
+	background:url(//tjupt.org/styles/PurplePhantom/bg.png) no-repeat center top;
 	background-color: #694887;
 	color: #000000;
 	font-family: tahoma, arial, helvetica, sans-serif;
@@ -25,7 +25,7 @@ table
 #info_block
 {
 	border:none;
-	background:url(//tjupt.org//tjupt-assets/styles/PurplePhantom/info_bg.png) repeat-x left top;
+	background:url(//tjupt.org/styles/PurplePhantom/info_bg.png) repeat-x left top;
 	background-position:-1px -1px;
 	width:940px;
 }
@@ -185,7 +185,7 @@ td.bottom /*working */
 	border-top: medium none;
 	border-left: medium none;
 	border-bottom: medium none;
-	background:url(//tjupt.org//tjupt-assets/styles/PurplePhantom/info_bg_inside.png) repeat-x left bottom;
+	background:url(//tjupt.org/styles/PurplePhantom/info_bg_inside.png) repeat-x left bottom;
 }
 td.heading
 {
@@ -512,7 +512,7 @@ ul.menu li
 ul.menu li a
 {
 	color:#00000;
-	background:url(//tjupt.org//tjupt-assets/styles/PurplePhantom/tab_normal.png) no-repeat right top;
+	background:url(//tjupt.org/styles/PurplePhantom/tab_normal.png) no-repeat right top;
 	margin-right: 0px;
 	padding: 5px 7px;
 	text-decoration: none;
@@ -537,7 +537,7 @@ ul.menu li a:visited
 }
 ul.menu li a:hover
 {
-	background:url(//tjupt.org//tjupt-assets/styles/PurplePhantom/tab_hover.png) no-repeat center bottom;
+	background:url(//tjupt.org/styles/PurplePhantom/tab_hover.png) no-repeat center bottom;
 	border-left:1px solid #ac80d3;
 	border-top:1px solid #ac80d3;
 }
@@ -547,7 +547,7 @@ ul.menu li a:active
 }
 ul.menu li.selected a
 {
-	background:url(//tjupt.org//tjupt-assets/styles/PurplePhantom/tab_selected.png) repeat left top;
+	background:url(//tjupt.org/styles/PurplePhantom/tab_selected.png) repeat left top;
 	color: #000000;
 	padding: 7px 9px 5px;
 	border:1px solid #333;
@@ -644,7 +644,7 @@ A.Peasant_Name:visited{color: #708090}
 
 .logo
 {
-	background:url(//tjupt.org//tjupt-assets/styles/PurplePhantom/logo.png) no-repeat left top;
+	background:url(//tjupt.org/styles/PurplePhantom/logo.png) no-repeat left top;
 	font-family: "Microsoft YaHei", "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti, Arial, sans-serif;
 	background-position:17px 17px;
 	text-indent:-9999px;
@@ -687,7 +687,7 @@ A.Peasant_Name:visited{color: #708090}
 /*scrollbar*/
 #scrollbar{position:fixed;top:50%;right:50%;width:32px;margin-right:-516px;/*border:1px solid #444;background:transparent;*/-webkit-box-shadow:0 0 5px #FFF;-khtml-box-shadow:0 0 5px #FFF;box-shadow:0 0 5px #FFF;border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px;-khtml-border-radius:5px;}
 /*
-#scrollbar a{display:block;width:24px; height:24px;background:url(//tjupt.org//tjupt-assets/styles/PurplePhantom/scrollbar.gif) no-repeat 0 0;cursor:pointer;}
+#scrollbar a{display:block;width:24px; height:24px;background:url(//tjupt.org/styles/PurplePhantom/scrollbar.gif) no-repeat 0 0;cursor:pointer;}
 #scrollbar a.top:hover {background-position:-24px 0;}
 #scrollbar a.bottom {background-position:0 -24px;}
 #scrollbar a.bottom:hover {background-position:-24px -24px;}
@@ -695,7 +695,7 @@ A.Peasant_Name:visited{color: #708090}
 #scrollbar a.comments:hover {background-position:-24px -48px;}
 */
 /*
-#scrollbar a{display:block;width:32px; height:26px;background:url(//tjupt.org//tjupt-assets/styles/PurplePhantom/scrollbar2.png) no-repeat 0 0;cursor:pointer;}
+#scrollbar a{display:block;width:32px; height:26px;background:url(//tjupt.org/styles/PurplePhantom/scrollbar2.png) no-repeat 0 0;cursor:pointer;}
 #scrollbar a.top:hover {background-position:-32px 0;}
 #scrollbar a.bottom {background-position:0 -46px;}
 #scrollbar a.bottom:hover {background-position:-32px -46px;}

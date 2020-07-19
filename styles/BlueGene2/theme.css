@@ -3,7 +3,7 @@ body
 	margin-top: 0px;
 	margin-bottom: 0px;
 	color: #000000;
-	background: url(//tjupt.org//tjupt-assets/styles/BlueGene2/bg.png) repeat-x;/*no-repeat center top;*/
+	background: url(//tjupt.org/styles/BlueGene2/bg.png) repeat-x;/*no-repeat center top;*/
 	background-color: #EBF8FF;
 	font-family:"Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti, "Microsoft YaHei", Arial, sans-serif;
 	/*font-family:tahoma, arial, helvetica, sans-serif;*/
@@ -106,7 +106,7 @@ h2
 	margin-bottom: 0px;
 	padding-bottom: 3px;
 	padding-top: 3px;
-	background: url(//tjupt.org//tjupt-assets/styles/BlueGene2/shade.gif) repeat-x left top;
+	background: url(//tjupt.org/styles/BlueGene2/shade.gif) repeat-x left top;
 	/*background-color: #84BCE2;*/
 	border-right: #bebebe 0px solid;
 	border-top: #999999 0px solid;
@@ -414,7 +414,7 @@ a.altlink_green:hover
 	border-top: #ccc 1px outset;
 	padding-left: 2px;
 	font-weight: bold;
-	background: url(//tjupt.org//tjupt-assets/styles/BlueGene2/btnbg.gif) repeat-x left top;
+	background: url(//tjupt.org/styles/BlueGene2/btnbg.gif) repeat-x left top;
 	padding-bottom: 1px;
 	border-left: #ccc 1px outset;
 	cursor: pointer;
@@ -429,7 +429,7 @@ a.altlink_green:hover
 	border-top: #ccc 1px outset;
 	padding-left: 2px;
 	font-weight: bold;
-	background: url(//tjupt.org//tjupt-assets/styles/BlueGene2/btnbg.gif) repeat-x left top;
+	background: url(//tjupt.org/styles/BlueGene2/btnbg.gif) repeat-x left top;
 	padding-bottom: 1px;
 	border-left: #ccc 1px outset;
 	cursor: pointer;
@@ -471,7 +471,7 @@ img.border
 	padding-right: 3px;
 	padding-left: 3px;
 	font-weight: bold;
-	background: url(//tjupt.org//tjupt-assets/styles/BlueGene2/code.gif) #f1b000 no-repeat right 50%;
+	background: url(//tjupt.org/styles/BlueGene2/code.gif) #f1b000 no-repeat right 50%;
 	padding-bottom: 3px;
 	margin: 0px auto;
 	color: #000;
@@ -530,7 +530,7 @@ ul.menu li
 ul.menu li a
 {
 	color: #2d2b2b;
-	background: url(//tjupt.org//tjupt-assets/styles/BlueGene2/shade.gif) repeat-x left top;
+	background: url(//tjupt.org/styles/BlueGene2/shade.gif) repeat-x left top;
 	border:#EBEBEB 1px solid;
 	background-color: #dedede;
 	margin-right: 1px;
@@ -554,7 +554,7 @@ ul.menu li a:visited
 ul.menu li a:hover
 {
 	color: #2d2b2b;
-	background: url(//tjupt.org//tjupt-assets/styles/BlueGene2/shadeactive.gif) repeat-x left top;
+	background: url(//tjupt.org/styles/BlueGene2/shadeactive.gif) repeat-x left top;
 	background-color: #72b5ec;
 }
 ul.menu li a:active
@@ -563,13 +563,13 @@ ul.menu li a:active
 }
 ul.menu li.selected a
 {
-	background-image: url(//tjupt.org//tjupt-assets/styles/BlueGene2/shadehover.gif);
+	background-image: url(//tjupt.org/styles/BlueGene2/shadehover.gif);
 	background-color: #72b5ec;
 	font-weight: bold;
 }
 ul.menu li.selected a:hover
 {
-	background: url(//tjupt.org//tjupt-assets/styles/BlueGene2/shadeactive.gif) repeat-x left top;
+	background: url(//tjupt.org/styles/BlueGene2/shadeactive.gif) repeat-x left top;
 	background-color: #72b5ec;
 }
 .listitem
@@ -708,7 +708,7 @@ A.Peasant_Name:visited{color: #708090}
 	display: block;
 	width: 50px;
 	height: 50px;
-	background: url(//tjupt.org//tjupt-assets/styles/BlueGene2/top.png) no-repeat 0 0;
+	background: url(//tjupt.org/styles/BlueGene2/top.png) no-repeat 0 0;
 	cursor: pointer;
 }
 
