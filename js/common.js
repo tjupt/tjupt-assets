@@ -644,6 +644,7 @@ function rejectSignup(id) {
             }
         },
         html: '<label><input onclick="insertReason()" type="checkbox" name="reason" value="需要更多信息以确认你是教育网用户">需要更多信息以确认你是教育网用户</label><br>' +
+            '<label><input onclick="insertReason()" type="checkbox" name="reason" value="在非教育网环境下注册，且未提供校园身份证明">在非教育网环境下注册，且未提供校园身份证明</label><br>' +
             '<label><input onclick="insertReason()" type="checkbox" name="reason" value="无法判断证件有效期信息">无法判断证件有效期信息</label><br>' +
             '<label><input onclick="insertReason()" type="checkbox" name="reason" value="证件未按要求使用纸条遮挡">证件未按要求使用纸条遮挡</label><br>' +
             '<label><input onclick="insertReason()" type="checkbox" name="reason" value="证件与所使用邮箱域不符">证件与所使用邮箱域不符</label><br>' +
