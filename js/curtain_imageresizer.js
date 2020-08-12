@@ -63,14 +63,14 @@ function Return() {
     // $('#lightbox').html("");
 }
 
-function bbimg(o) { // From http://pt.antsoul.com
-    var zoom = parseInt(o.style.zoom, 10) || 100;
+function bbimg() { // From http://pt.antsoul.com
+    var zoom = parseInt(this.style.zoom, 10) || 100;
 
     if (zoom <= 10)
         zoom = 100;
     zoom += event.wheelDelta / 12;
     if (zoom > 10 && zoom < 500)
-        o.style.zoom = zoom + '%';
+        this.style.zoom = zoom + '%';
     return false;
 }
 
