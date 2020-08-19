@@ -1034,3 +1034,18 @@ window.addEventListener('load', function () {
         elements_selector: "*[data-src]"
     });
 });
+
+function joinGroup() {
+    $.get("/join_group.php")
+
+    const groups = [155707364, 838391326]
+    const group = groups[Math.round(Math.random())]
+
+    Swal.fire({
+        title: "加入QQ群",
+        html: `请在10分钟内加入QQ群 <b>${group}</b> ，并将用户名完整写于验证消息中<br>` +
+            "注意：验证消息请仅填写用户名，不要添加任何其他文字",
+        imageUrl: `/pic/qq_join_group/${group}.png`,
+        width: "44rem"
+    })
+}
