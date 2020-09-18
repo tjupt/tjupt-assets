@@ -1049,3 +1049,42 @@ function joinGroup() {
         width: "44rem"
     })
 }
+
+function topic_bookmark(tid, action, changeButtonStatus = true) {
+    function _onclose () {
+        if (changeButtonStatus) {
+            $("#topic_bookmark")
+                .val(changeButtonText)
+                .attr("onclick", `topic_bookmark(${tid}, '${changeButtonAction}')`)
+        } else {
+            location.reload()
+        }
+    }
+
+    if (!["add", "delete"].includes(action)) {
+        return false
+    }
+    const actionText = action === "delete" ? "取消收藏" : "收藏本帖"
+    const changeButtonText = action === "delete" ? "收藏本帖" : "取消收藏"
+    const changeButtonAction = action === "delete" ? "add" : "delete"
+    $.post("marked_topic.php", {
+        action: action,
+        topicid: tid
+    }).then(resp => {
+        if (resp === "OK") {
+            Swal.fire({
+                title: actionText + "成功",
+                icon: "success",
+                footer: "<a href='/marked_topic.php' target='_blank'>查看已收藏的主题</a>",
+                onClose: _onclose
+            })
+        } else {
+            Swal.fire({
+                title: actionText + "失败",
+                icon: "error",
+                footer: "<a href='/marked_topic.php' target='_blank'>查看已收藏的主题</a>",
+                onClose: _onclose
+            })
+        }
+    })
+}
