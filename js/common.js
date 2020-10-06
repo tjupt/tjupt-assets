@@ -1035,23 +1035,31 @@ window.addEventListener('load', function () {
     });
 });
 
+/**
+ * QQ群加群
+ */
 function joinGroup() {
-    $.get("/join_group.php")
-
     const groups = [155707364, 838391326]
     const group = groups[Math.round(Math.random())]
 
     Swal.fire({
         title: "加入QQ群",
-        html: `请在10分钟内加入QQ群 <b>${group}</b> ，并将用户名完整写于验证消息中<br>` +
-            "注意：验证消息请仅填写用户名，不要添加任何其他文字",
+        html: `欢迎加入QQ群 <b>${group}</b> ，请将用户名完整写于验证消息中<br>` +
+            "注意：验证消息请仅填写用户名，不要添加任何其他文字，否则将影响机器人自动通过",
         imageUrl: `/pic/qq_join_group/${group}.png`,
         width: "44rem"
     })
 }
 
+/**
+ * 论坛加收藏/取消收藏
+ * @param tid 帖子ID
+ * @param action 行为
+ * @param changeButtonStatus true: 修改按钮的文字 false: 刷新页面
+ * @returns {boolean}
+ */
 function topic_bookmark(tid, action, changeButtonStatus = true) {
-    function _onclose () {
+    function _onclose() {
         if (changeButtonStatus) {
             $("#topic_bookmark")
                 .val(changeButtonText)
