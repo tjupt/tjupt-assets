@@ -1096,3 +1096,141 @@ function topic_bookmark(tid, action, changeButtonStatus = true) {
         }
     })
 }
+
+/**
+ * 兑奖
+ */
+function app_redeem() {
+    const code_selector = $("input[name='reward_code']")
+
+    const code = code_selector.val()
+    if (code.length !== 6) {
+        Swal.fire({
+            icon: "error",
+            title: "错误",
+            text: "输入的兑换码有误！",
+            footer: "小知识：兑换码为6位英文+数字组合而成的"
+        })
+        return
+    }
+
+    $.post("reward_code.php", {code: code, action: "redeem"}).then(res => {
+        if (res.status < 0) {
+            Swal.fire({
+                icon: "error",
+                title: "错误",
+                text: res.msg,
+                onClose: () => {
+                    location.reload()
+                }
+            })
+        } else {
+            Swal.fire({
+                icon: "success",
+                title: "成功",
+                text: res.msg,
+                onClose: () => {
+                    location.reload()
+                }
+            })
+        }
+    })
+}
+
+/**
+ * 创建新的兑换码活动
+ */
+function create_reward_event() {
+    Swal.mixin({
+        confirmButtonText: 'Next &rarr;',
+        showCancelButton: true,
+        progressSteps: ['1', '2']
+    }).queue([
+        {
+            title: "活动名称",
+            input: "text",
+        },
+        {
+            title: "过期时间",
+            text: "Y-m-d H:i:s，如2010-10-02 18:09:05",
+            input: "text"
+        }
+    ]).then((result) => {
+        if (result.value) {
+            $.post("reward_code.php", {
+                action: "create_event",
+                event_name: result.value[0],
+                expired_at: result.value[1]
+            }).then(res => {
+                Swal.fire(
+                    "创建成功",
+                    `活动ID为${res.data}`,
+                    "success"
+                )
+            })
+        }
+    })
+}
+
+/**
+ * 生成兑换码
+ */
+function create_reward_code() {
+    $.get("reward_code.php", {action: "get_events"}).then(res => {
+        Swal.mixin({
+            confirmButtonText: 'Next &rarr;',
+            showCancelButton: true,
+            progressSteps: ['1', '2', '3', '4']
+        }).queue([
+            {
+                title: "选择一个活动",
+                input: "select",
+                inputOptions: res.data
+            },
+            {
+                title: "奖励类型",
+                input: "radio",
+                inputOptions: {
+                    'seedbonus': "魔力值",
+                    'invites': "永久邀请"
+                }
+            },
+            {
+                title: "奖励数量",
+                input: "number"
+            },
+            {
+                title: "生成兑换码数量",
+                input: "number"
+            }
+        ]).then((result) => {
+            if (result.value) {
+                $.post("reward_code.php", {
+                    action: "generate_code",
+                    event_id: result.value[0],
+                    reward_item: result.value[1],
+                    reward_num: result.value[2],
+                    gen_num: result.value[3]
+                }).then(res => {
+                    Swal.fire({
+                        icon: "success",
+                        title: "生成成功",
+                        html: `<a class='faqlink' id='click_to_copy' onclick='return false' data-clipboard-text='${res.data.join("\n")}'>点此复制兑换码</a>`,
+                        onRender: () => {
+                            var clipboard = new ClipboardJS("#click_to_copy");
+                            clipboard.on("success", function (e) {
+                                alert("复制成功")
+                            })
+                            clipboard.on('error', function (e) {
+                                prompt("复制失败，请手动复制：", e.text)
+                            })
+                        },
+                        onClose: () => {
+                            location.reload()
+                        }
+                    })
+                })
+            }
+        })
+    })
+}
