@@ -479,6 +479,22 @@ function filter_uploaders() {
     }
 }
 
+function get_ptgen_endpoint() {
+    const default_endpoint = "https://ptgen.tju.pt/"
+    const deprecated_endpoint = ["https://ptgen.tju.network:11399/", "https://ptgen.tju.network:11499/", "https://ptgen.tju.network:11799/"]
+
+    let endpoint = localStorage.getItem("PT_GEN_ENDPOINT");
+    if (!endpoint || deprecated_endpoint.includes(endpoint)) {
+        endpoint = default_endpoint
+        localStorage.setItem("PT_GEN_ENDPOINT", default_endpoint);
+    }
+    if (endpoint.charAt(endpoint.length - 1) !== '/') {
+        endpoint = endpoint + "/"
+    }
+
+    return endpoint
+}
+
 /**
  * 调用PT-Gen来填写简介
  */
@@ -488,16 +504,9 @@ function get_external_data() {
     if ($("#descr").val() && !confirm("辅助填写将删除已填写简介，是否继续？")) {
         return;
     }
-    let endpoint = localStorage.getItem("PT_GEN_ENDPOINT");
-    if (!endpoint || endpoint === "https://ptgen.tju.network:11399/" ||
-        endpoint === "https://ptgen.tju.network:11499/" ||
-        endpoint === "https://ptgen.tju.network:11799/") {
-        endpoint = "https://ptgen.tju.pt/";
-        localStorage.setItem("PT_GEN_ENDPOINT", "https://ptgen.tju.pt/");
-    }
-    if (endpoint.charAt(endpoint.length - 1) !== '/') {
-        endpoint = endpoint + "/";
-    }
+
+    const endpoint = get_ptgen_endpoint()
+
     let external_api_base_url = endpoint + "infogen";
     let api_url = "";
     if (url.search("imdb.com") !== -1) {
@@ -1234,3 +1243,116 @@ function create_reward_code() {
         })
     })
 }
+
+/**
+ * 加载外部信息，如豆瓣/IMDb
+ * 本部分借鉴了Ourbits的前端实现，感谢！
+ */
+function load_external_data() {
+    const ptgenEndpoint = get_ptgen_endpoint()
+    let doubanSelector = $("#kdouban")
+    if (doubanSelector.length > 0) {
+        const doubanId = doubanSelector.attr("data-douban-id")
+        const doubanUrl = `https://movie.douban.com/subject/${doubanId}/`
+        let doubanData = localStorage.getItem(`douban_data_${doubanId}`)
+        if (doubanData) {
+            buildDoubanDiv(JSON.parse(doubanData), doubanSelector)
+        } else {
+            $.getJSON(ptgenEndpoint + "infogen", {
+                site: "douban",
+                sid: doubanId
+            }, data => {
+                if (data.success !== false) {
+                    localStorage.setItem(`douban_data_${doubanId}`, JSON.stringify(data))
+                    buildDoubanDiv(data, doubanSelector)
+                } else {
+                    doubanSelector.html(`获取豆瓣信息错误：<a href="${doubanUrl}" target="_blank">豆瓣ID ${doubanId}</a>，错误：${data.error}`)
+                }
+            }).fail(function (jqXHR, textStatus, errorThrown) {
+                doubanSelector.html(`获取豆瓣信息失败：<a href="${doubanUrl}" target="_blank">豆瓣ID ${doubanId}</a>，错误：${textStatus}`)
+            })
+        }
+    }
+
+    let imdbSelector = $("#kimdb")
+    if (imdbSelector.length > 0) {
+        const imdbId = imdbSelector.attr("data-imdb-id")
+        const imdbUrl = `https://www.imdb.com/title/${imdbId}/`
+        let imdbData = localStorage.getItem(`imdb_data_${imdbId}`)
+        if (imdbData) {
+            buildIMDbDiv(JSON.parse(imdbData), imdbSelector)
+        } else {
+            $.getJSON(ptgenEndpoint + "infogen", {
+                site: "imdb",
+                sid: imdbId
+            }, data => {
+                if (data.success !== false) {
+                    localStorage.setItem(`imdb_data_${imdbId}`, JSON.stringify(data))
+                    buildIMDbDiv(data, imdbSelector)
+                } else {
+                    imdbSelector.html(`获取IMDb信息错误：<a href="${imdbUrl}" target="_blank">IMDb ID ${imdbId}</a>，错误：${data.error}`)
+                }
+            }).fail(function (jqXHR, textStatus, errorThrown) {
+                imdbSelector.html(`获取IMDb信息失败：<a href="${imdbUrl}" target="_blank">IMDb ID ${imdbId}</a>，错误：${textStatus}`)
+            })
+        }
+    }
+}
+
+/**
+ * 加载豆瓣信息的div
+ * @param data PTGEN数据
+ * @param containerSelector
+ */
+function buildDoubanDiv(data, containerSelector) {
+    let poster = data.poster.replace('img3', 'img1')
+    let new_format = data.format.replace(/\[img].+?\[\/?img]/, '')
+        .trim()
+        .replace(/\n/ig, '<br>')
+
+    $(`<div style='margin-bottom: 10px'><img src="pic/douban.png" style='display: inline-block;vertical-align: middle;width: 16px;' alt="douban_icon">
+<a href='${data.douban_link}' target='_blank' style='display: inline-block;margin: 0 5px;'><b><u>${data.chinese_title || ""} ${data.foreign_title}</u></b></a><span style='color: darkcyan;font-family: Arial;'>(${data.year})</span><span style='display: inline-block;margin: 0 5px 0 10px;'>${data.douban_rating_average || 0}/10</span><span style='color: darkcyan;font-family: Arial;'>(${data.douban_votes.toLocaleString()})</span></div>`).insertBefore(containerSelector)
+
+    containerSelector.html(`<div id='doubaninfo'>
+<div class="doubannew" style="padding:5px;float:left;"><a target="blank" href="${data.douban_link}"><img width='210' src="${poster}" alt="douban poster"></a></div>
+<div class="doubannew2" style="float: left;border-left: 1px dashed;  padding:5px;max-width:70%;">
+<div class='doubaninfo'>${new_format}</div>
+</div></div>`)
+
+    let movienameSelector = $("#moviename")
+    if (movienameSelector.length > 0 && movienameSelector.val() === "") {
+        movienameSelector.val(data.chinese_title || data.foreign_title)
+    }
+}
+
+/**
+ * 加载IMDb信息的div
+ * @param data PTGEN数据
+ * @param containerSelector
+ */
+function buildIMDbDiv(data, containerSelector) {
+    let poster = data.poster
+    let new_format = data.format.replace(/\[img].+?\[\/?img]/, '')
+        .trim()
+        .replace(/\n/ig, '<br>')
+
+    $(`<div style='margin-bottom: 10px'><img src="pic/imdb.png" style='display: inline-block;vertical-align: middle;width: 16px;' alt="imdb_icon">
+<a href='${data.imdb_link}' target='_blank' style='display: inline-block;margin: 0 5px;'><b><u>${data.name || ""}</u></b></a><span style='color: darkcyan;font-family: Arial;'>(${data.year})</span><span style='display: inline-block;margin: 0 5px 0 10px;'>${data.imdb_rating_average || 0}/10</span><span style='color: darkcyan;font-family: Arial;'>(${data.imdb_votes.toLocaleString()})</span></div>`).insertBefore(containerSelector)
+
+    containerSelector.html(`<div id='imdbinfo'>
+<div class="imdbnew" style="padding:5px;float:left;"><a target="blank" href="${data.imdb_link}"><img width='210' src="${poster}" alt="imdb poster"></a></div>
+<div class="imdbnew2" style="float: left;border-left: 1px dashed;  padding:5px;max-width:70%;">
+<div class='imdbinfo'>${new_format}</div>
+</div></div>`)
+
+    if ($("#kdouban").length === 0) {  // 没有豆瓣则使用IMDb的英文名来填写字幕区的名字
+        let movienameSelector = $("#moviename")
+        if (movienameSelector.length > 0 && movienameSelector.val() === "") {
+            movienameSelector.val(data.name || "")
+        }
+    }
+}
+
+window.addEventListener('load', function () {
+    load_external_data()
+});
