@@ -776,3 +776,11 @@ img.sticky_3 {
     height: 16px;
     background: url(//tjupt.org/pic/sticky_3.png);
 }
+
+tr.request_unfilled {
+    background: #FFCC99;
+}
+
+tr.request_filled {
+    background: #99CCCC;
+}
