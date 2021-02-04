@@ -1331,7 +1331,7 @@ function buildDoubanDiv(data, containerSelector) {
  * @param containerSelector
  */
 function buildIMDbDiv(data, containerSelector) {
-    let poster = data.poster
+    let poster = data.poster || "/pic/imdb_pic/nophoto.gif"
     let new_format = data.format.replace(/\[img].+?\[\/?img]/, '')
         .trim()
         .replace(/\n/ig, '<br>')
