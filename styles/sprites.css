@@ -784,3 +784,11 @@ tr.request_unfilled {
 tr.request_filled {
     background: #99CCCC;
 }
+
+tr.active_class {
+    background-color: #f3e1cf;
+}
+
+tr.previous_class {
+    background-color: #f3e1cf;
+}

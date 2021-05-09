@@ -1356,3 +1356,26 @@ function buildIMDbDiv(data, containerSelector) {
 window.addEventListener('load', function () {
     load_external_data()
 });
+
+/**
+ * 升级确认框，用于classes.php
+ * @param classToGo 将要升级至的等级ID
+ * @param className 将要升级至的等级名称
+ * @param cost 升级所需的魔力值
+ */
+function levelUp(classToGo, className, cost) {
+    Swal.fire({
+        title: "升级",
+        text: `你将消耗${cost}个魔力值以升级至${className}`,
+        icon: "info",
+        showCancelButton: true,
+        confirmButtonText: "确认",
+        cancelButtonText: "取消",
+    }).then((result) => {
+        if (result.isConfirmed) {
+            let thisForm = $(`<form action="/classes.php" method="post"><input type="hidden" name="class" value="${classToGo}" /></form>`);
+            $("body").append(thisForm);
+            thisForm.submit();
+        }
+    })
+}
