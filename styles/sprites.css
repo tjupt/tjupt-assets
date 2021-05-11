@@ -793,6 +793,6 @@ tr.previous_class {
     background-color: #f3e1cf;
 }
 
-td.outer img {
+div#kdescr img {
     max-width: 100%
 }
