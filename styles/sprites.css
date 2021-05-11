@@ -708,6 +708,10 @@ img.tqq {
     background-color: #E3CA3C;
 }
 
+.tag-reseed {
+    background-color: #666699;
+}
+
 .tag-left {
     float: right;
 }
