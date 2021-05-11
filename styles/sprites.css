@@ -792,3 +792,7 @@ tr.active_class {
 tr.previous_class {
     background-color: #f3e1cf;
 }
+
+td.outer img {
+    max-width: 100%
+}
