@@ -659,7 +659,7 @@ function rejectSignup(id) {
             '<label><input onclick="insertReason()" type="checkbox" name="reason" value="证件与所使用邮箱域不符">证件与所使用邮箱域不符</label><br>' +
             '<label><input onclick="insertReason()" type="checkbox" name="reason" value="注册IP地址与学校所在地不符">注册IP地址与学校所在地不符</label><br>' +
             '<label><input onclick="insertReason()" type="checkbox" name="reason" value="使用网络代理/VPN注册">使用网络代理/VPN注册</label><br>' +
-            '<label><input onclick="insertReason()" type="checkbox" name="reason" value="无法确定贵校已接入IPv6网络"无法确定贵校已接入IPv6网络</label><br>' +
+            '<label><input onclick="insertReason()" type="checkbox" name="reason" value="无法确定贵校已接入IPv6网络">无法确定贵校已接入IPv6网络</label><br>' +
             '<label><input onclick="insertReason()" type="checkbox" name="reason" value="自助邀请注册仅限在校生">自助邀请注册仅限在校生</label><br>',
         icon: 'question'
     }).then((result) => {
