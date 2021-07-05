@@ -1381,3 +1381,27 @@ function levelUp(classToGo, className, cost) {
         }
     })
 }
+
+/**
+ * 清理当前所有Cookies
+ */
+function clearCookies() {
+    const keys = document.cookie.match(/[^ =;]+(?==)/g)
+    const temp = document.domain.split(".")
+    const masterDomain = `${temp[temp.length - 2]}.${temp[temp.length - 1]}`
+    if (keys) {
+        for (let i = keys.length; i--;) {
+            document.cookie = keys[i] + '=0;path=/;expires=' + new Date(0).toUTCString()
+            document.cookie = keys[i] + '=0;path=/;domain=' + document.domain + ';expires=' + new Date(0).toUTCString()
+            document.cookie = keys[i] + '=0;path=/;domain=' + masterDomain + ';expires=' + new Date(0).toUTCString()
+        }
+    }
+}
+
+/**
+ * 在提交登录前清除所有Cookies
+ */
+function submitLogin() {
+    clearCookies()
+    $("form[name='loginform']").submit()
+}
